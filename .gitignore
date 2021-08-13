@@ -2,3 +2,4 @@ node_modules
 static/*
 !static/*.html
 !static/*.css
+__snapshots__
