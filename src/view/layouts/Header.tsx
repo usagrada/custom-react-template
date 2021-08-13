@@ -1,13 +1,13 @@
-import React, { VFC } from "react";
-import styled from "@emotion/styled";
-import { Typography } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import React, { VFC } from 'react';
+import styled from '@emotion/styled';
+import { Typography } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 const Header: VFC = () => {
   return (
     <CustomHeader>
-      <Link to={"/"}>Home</Link>
-      <Link to={"/about"}>About</Link>
+      <Link to={'/'}>Home</Link>
+      <Link to={'/about'}>About</Link>
       <Typography variant="h6">Title</Typography>
     </CustomHeader>
   );

@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import React, { VFC, ReactNode } from "react";
+import styled from '@emotion/styled';
+import React, { VFC, ReactNode } from 'react';
 
 interface Props {
   children: ReactNode;

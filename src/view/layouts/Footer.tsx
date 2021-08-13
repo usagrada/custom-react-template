@@ -1,5 +1,5 @@
-import React, { VFC } from "react";
-import styled from "@emotion/styled";
+import React, { VFC } from 'react';
+import styled from '@emotion/styled';
 
 const Footer: VFC = () => {
   return <CustomFooter>Footer</CustomFooter>;

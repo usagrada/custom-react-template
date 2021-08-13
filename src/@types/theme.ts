@@ -1,4 +1,4 @@
-import { theme } from "../view/theme/theme";
+import { theme } from '../view/theme/theme';
 
 export interface MyTheme {
   colors: typeof theme.colors;

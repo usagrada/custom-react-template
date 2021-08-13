@@ -1,4 +1,4 @@
-import React, { VFC } from "react";
+import React, { VFC } from 'react';
 
 const AboutPage: VFC = () => {
   return <div>About Page</div>;

@@ -1,4 +1,4 @@
-import React, { VFC } from "react";
+import React, { VFC } from 'react';
 
 const NotFound: VFC = () => {
   return <div>Not Found</div>;
