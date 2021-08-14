@@ -43,5 +43,6 @@ module.exports = {
     contentBase: 'static',
     open: true,
     hot: true,
+    historyApiFallback: true
   },
 };
