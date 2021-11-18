@@ -1,5 +1,5 @@
 import React, { lazy, Suspense, VFC } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './layouts/Header';
 import Footer from './layouts/Footer';
 import Container from './layouts/Container';
@@ -16,11 +16,11 @@ const App: VFC = () => {
         <Router basename={process.env.PUBLIC_URL}>
           <Header />
           <Container>
-            <Switch>
-              <Route exact path="/" component={TopPage} />
-              <Route path="/about" component={AboutPage} />
-              <Route component={NotFound} />
-            </Switch>
+            <Routes>
+              <Route path="/" element={<TopPage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route element={<NotFound />} />
+            </Routes>
           </Container>
           <Footer />
         </Router>

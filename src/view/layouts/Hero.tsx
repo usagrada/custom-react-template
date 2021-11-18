@@ -1,6 +1,6 @@
 import React, { VFC } from 'react';
 import styled from '@emotion/styled';
-import { Toolbar, Typography } from '@material-ui/core';
+import { Toolbar, Typography } from '@mui/material';
 
 const Hero: VFC = () => {
   return (

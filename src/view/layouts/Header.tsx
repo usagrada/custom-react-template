@@ -1,7 +1,7 @@
 import React, { VFC } from 'react';
 import styled from '@emotion/styled';
-import { Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import { Typography } from '@mui/material';
 
 const Header: VFC = () => {
   return (

@@ -1,4 +1,4 @@
-import { createTheme } from '@material-ui/core';
+import { createTheme } from "@mui/material";
 
 export const theme = {
   colors: {
@@ -17,4 +17,4 @@ export const theme = {
   },
 };
 
-export const muiTheme = createTheme(theme);
+export const muiTheme = createTheme();
