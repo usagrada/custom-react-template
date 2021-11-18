@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+const nodeExternals = require('webpack-node-externals');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   // モード値を production に設定すると最適化された状態で、
@@ -17,22 +18,6 @@ module.exports = {
     filename: 'main.js',
     publicPath: '/scripts/',
   },
-  module: {
-    rules: [
-      {
-        // 拡張子 .ts もしくは .tsx の場合
-        test: /\.tsx?$/,
-        // TypeScript をコンパイルする
-        use: 'ts-loader',
-      },
-    ],
-  },
-  // import 文で .ts や .tsx ファイルを解決するため
-  resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json'],
-  },
-  // ES5(IE11等)向けの指定（webpack 5以上で必要）
-  target: ['web', 'es5'],
 
   plugins: [
     // fix "process is not defined" error:
@@ -45,15 +30,42 @@ module.exports = {
     }),
   ],
 
+  externals: [/node_modules/],
+
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        exclude: [/node_modules/],
+        use: 'babel-loader',
+      },
+      {
+        // 拡張子 .ts もしくは .tsx の場合
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        // TypeScript をコンパイルする
+        use: 'ts-loader',
+      },
+    ],
+  },
+  // import 文で .ts や .tsx ファイルを解決するため
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.json'],
+  },
+  // ES5(IE11等)向けの指定（webpack 5以上で必要）
+  target: ['web', 'es5'],
+
   devServer: {
     port: 3000,
     static: {
       directory: path.join(__dirname, 'static'),
+      watch: true,
     },
     compress: true,
     open: false,
     hot: true,
     liveReload: true,
-    historyApiFallback: true
+    historyApiFallback: true,
+    webSocketServer: false // for escape error encoding
   },
 };
