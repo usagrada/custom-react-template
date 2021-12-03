@@ -3,13 +3,13 @@ import React, { VFC } from 'react';
 import Footer from '../layouts/Footer';
 import Header from '../layouts/Header';
 
-const TopPage: VFC = () => {
+const UserPage: VFC = () => {
   return (
     <>
       <Header />
       <Container>
         <main>
-          <h1>Top Page</h1>
+          <h1>User Page</h1>
           <div>ここがmain コンテンツです</div>
         </main>
       </Container>
@@ -18,4 +18,4 @@ const TopPage: VFC = () => {
   );
 };
 
-export default TopPage;
+export default UserPage;
